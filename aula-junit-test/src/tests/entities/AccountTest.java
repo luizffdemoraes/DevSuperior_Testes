@@ -10,7 +10,7 @@ import entities.Account;
 class AccountTest {
 
 	@Test
-	public void depositShouldIncreaseBalanceWhenPositiveAmount() {
+	public void depositShouldIncreaseBalanceAndDiscountFeeWhenPositiveAmount() {
 		//Arrange cenario
 		double amount = 200.0;
 		double expectedValue = 196.0;
