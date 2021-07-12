@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import entities.Account;
+import tests.factory.AccountFactory;
 
 class AccountTest {
 	
@@ -18,7 +19,7 @@ class AccountTest {
 		// Arrange cenario
 		double amount = 200.0;
 		double expectedValue = 196.0;
-		Account acc = new Account(1L, 0.0);
+		Account acc = AccountFactory.createEmptyAccount();
 
 		// Act acao
 		acc.deposit(amount);
@@ -34,7 +35,7 @@ class AccountTest {
 	public void depositShouldDoNothingWhenNegativeAmount() {
 		// Arrange cenário
 		double expectedValue = 100.0;
-		Account acc = new Account(1L, 0.0);
+		Account acc = AccountFactory.createAccount(expectedValue);
 		double amount = -200;
 		
 		// Act ação
